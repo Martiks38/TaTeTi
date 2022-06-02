@@ -1,0 +1,13 @@
+%placeholder_cross {
+  content: ' ';
+  position: absolute;
+  top: calc(50% - 4px);
+  left: calc(50% - 45%);
+  width: 90%;
+  border: solid 4px #000;
+  background-color: #000;
+}
+
+@mixin cross {
+  @extend %placeholder_cross;
+}

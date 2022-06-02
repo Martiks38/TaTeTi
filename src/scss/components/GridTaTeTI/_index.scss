@@ -1,0 +1,48 @@
+@use '../../placeholders';
+
+.gridGame {
+  width: 27rem;
+  height: 27rem;
+
+  @media (max-width: 48rem) {
+    & {
+      width: 60vw;
+      height: 60vw;
+    }
+  }
+}
+
+.cell {
+  position: relative;
+  width: calc(100% / 3);
+  height: calc(100% / 3);
+  border: 4px solid white;
+  font-size: 1rem;
+}
+
+.cell_circle::after {
+  content: ' ';
+  position: absolute;
+  top: calc(50% - 40%);
+  left: calc(50% - 40%);
+  width: 80%;
+  height: 80%;
+  border: solid 6px red;
+  border-radius: 50%;
+}
+
+.cell_cross::before,
+.cell_cross::after {
+  @include placeholders.cross;
+  border-radius: 100%;
+  border-color: #e3e236;
+  background-color: #e3e236;
+}
+
+.cell_cross::before {
+  transform: rotate(45deg);
+}
+
+.cell_cross::after {
+  transform: rotate(-45deg);
+}
