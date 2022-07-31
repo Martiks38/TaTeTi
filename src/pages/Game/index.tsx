@@ -9,7 +9,7 @@ function Game() {
   const [dataGame, setDataGame] = useState<DataGame>(() => initDataGame())
 
   let result = msgWinner(dataGame)
-  console.log('me re renderizo')
+
   return (
     <div className="center">
       <GridTaTeTi dataGame={dataGame} setDataGame={setDataGame} />
